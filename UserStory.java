@@ -42,21 +42,7 @@ public class UserStory {
         System.out.println("Goodbye!!");
     }
 
-  //   while (selection != 2){
-  //     selection = promptUser();
-  //     System.out.println (showData(selection) + "\n");
-  //     String userMajor = promptUserForMajor();
-  //     int majorIndex = findIndexByMajor(userMajor);
-  //     System.out.println(majorIndex);
-  //     medianSalaries[majorIndex];
-      
-  //     selection = promptUser();
-  //   }
-    
-  //   System.out.println ("Goodbye!!"); 
-  // }
-
-
+  
 
 public int promptUser(){
   Scanner input = new Scanner (System.in);
