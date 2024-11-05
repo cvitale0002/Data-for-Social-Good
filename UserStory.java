@@ -23,20 +23,38 @@ public class UserStory {
   public void run(){
     int selection = 0;
 
-    while (selection != 2){
-      selection = promptUser();
-      System.out.println (showData(selection) + "\n");
-      String userMajor = promptUserForMajor();
-      int majorIndex = findIndexByMajor(userMajor);
-      System.out.println(majorIndex);
-      // medianSalaries [majorIndex];
-      
-      selection = promptUser();
+        while (selection != 2) {
+            selection = promptUser();
+            System.out.println(showData(selection) + "\n");
+            
+            String userMajor = promptUserForMajor();
+            int majorIndex = findIndexByMajor(userMajor);
+            
+            if (majorIndex != -1) {
+                System.out.println("The median salary for " + majors[majorIndex] + " is: " + medianSalaries[majorIndex] + ("\n"));
+            } else {
+                System.out.println("Major not found!");
+            }
 
+            selection = promptUser();
+        }
+
+        System.out.println("Goodbye!!");
     }
+
+  //   while (selection != 2){
+  //     selection = promptUser();
+  //     System.out.println (showData(selection) + "\n");
+  //     String userMajor = promptUserForMajor();
+  //     int majorIndex = findIndexByMajor(userMajor);
+  //     System.out.println(majorIndex);
+  //     medianSalaries[majorIndex];
+      
+  //     selection = promptUser();
+  //   }
     
-    System.out.println ("Goodbye!!"); 
-  }
+  //   System.out.println ("Goodbye!!"); 
+  // }
 
 
 
@@ -79,7 +97,9 @@ public String promptUserForMajor(){
   public int findIndexByMajor(String searchMajor) {
   for (int i = 0; i < majors.length; i++) {
     if (searchMajor.equals(majors[i])) {
-      return i + medianSalaries[i];
+      return i;
+       
+
 
     }
   }
